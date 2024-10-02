@@ -1,5 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default function handler(req, res) {
-  res.status(200).json({ name: "John Doe" });
-}
+const Shop = () => {
+  return (
+    <>
+      <div className="about">
+        <h1>Welcome to Shop</h1>
+      </div>
+    </>
+  );
+};
+export default Shop;

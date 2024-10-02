@@ -1,0 +1,145 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.product img {
+  flex-grow: 1;
+  width: 100%;
+  height: auto;
+}
+
+.heart{
+  display: flex;
+  align-items: center;
+}
+
+.heart img{
+  width: 24px;
+  height: 24px;
+}
+.products_nav {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0px auto;
+  align-items: center;
+  padding: 10px;
+  color: black;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  justify-content: space-evenly;
+}
+
+.number_item {
+  font-weight: bold;
+}
+.recom {
+  font-family: Simplon Norm;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.show_filter {
+  text-decoration: underline;
+  font-family: Simplon Norm;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.filter {
+  flex: 1;
+  padding: 10px;
+  background-color: #e0e0e0;
+}
+
+.products {
+  flex: 3;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.products {
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+/* =======styles for filter section and products section */
+
+.container {
+  width: 80%;
+  margin: 1px auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+  grid-template-rows: repeat(5, auto); /* 5 rows with automatic height */
+  gap: 20px; /* spacing between grid items */
+}
+
+.section {
+  margin-top: 22px;
+}
+
+@media (max-width: 480px) {
+  .products_nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: black;
+  }
+  .number_item {
+    display: none;
+  }
+  .items {
+    width: 100%;
+    display: block;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    /* Add some spacing between items and recom */
+  }
+  .show_filter {
+    text-decoration: underline;
+    font-family: Simplon Norm;
+    width: 70%;
+    justify-content: space-between;
+  }
+  .show_filter img {
+    display: none;
+  }
+
+  .recom {
+    width: 100%;
+    display: inline-block;
+  }
+  .container {
+    margin: 1px auto;
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 4 columns with equal width */
+    /* grid-template-rows: repeat(5, auto);  */
+    gap: 20px; /* spacing between grid items */
+  }
+  .section {
+    margin-top: 22px;
+    padding-left: 12px;
+  }
+}

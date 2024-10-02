@@ -1,7 +1,8 @@
 .headertop {
   font-family: "Barlow", sans-serif;
   width: 100%;
-  background-color: black;
+  height: 30px;
+  background-color: #000000;
   font-weight: 400;
   text-align: left;
   text-transform: lowercase;

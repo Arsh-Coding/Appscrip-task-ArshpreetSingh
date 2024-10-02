@@ -25,13 +25,13 @@ const Header = () => {
       <div className={styles.header_box}>
         <div className={styles.main_header}>
           <div className={styles.spaces}>
-            <Image src="/hamlinear.png" alt="error" width={36} height={40} />
+            <Image src="/hamlinear.png" alt="error" width={36} height={30} />
           </div>
           <div className={styles.icon}>
             <Image src="/logo.svg" alt="error" width={36} height={40} />
           </div>
           <div className={styles.title}>
-            <h2>ShoppersArena</h2>
+            <h2>LOGO</h2>
           </div>
           <div className={styles.iconsContainer}>
             <Image

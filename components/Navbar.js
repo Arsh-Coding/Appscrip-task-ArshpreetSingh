@@ -6,9 +6,9 @@ import styles from "@/styles/HeaderFooter.module.css";
 const links = [
   { href: "/", text: "HOME" },
   { href: "#", text: "SHOP" },
-  { href: "#", text: "SKILLS" },
+  { href: "/skills", text: "SKILLS" },
   { href: "#", text: "STORES" },
-  { href: "#", text: "ABOUT" },
+  { href: "/about", text: "ABOUT" },
   { href: "#", text: "CONTACTS" },
 ];
 

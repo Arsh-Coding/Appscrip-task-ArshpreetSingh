@@ -1,14 +1,13 @@
 .headertop {
   font-family: "Barlow", sans-serif;
   width: 100%;
-  height: 30px;
+  height: 40px;
   background-color: #000000;
   font-weight: 400;
   text-align: left;
   text-transform: lowercase;
   padding: 10px 0;
 }
-
 .spaces {
   display: none;
 }

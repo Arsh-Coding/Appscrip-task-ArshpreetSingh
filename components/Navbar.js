@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import styles from "@/styles/HeaderFooter.module.css";
 
 const links = [
-  { href: "/", text: "HOME" },
   { href: "#", text: "SHOP" },
   { href: "/skills", text: "SKILLS" },
   { href: "#", text: "STORES" },

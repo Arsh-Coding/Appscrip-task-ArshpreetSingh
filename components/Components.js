@@ -1,22 +1,54 @@
 "use client";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "@/styles/Products.module.css";
 import Image from "next/image";
 import ProductItem from "./Products";
 import Filter from "./Filters";
-import { useState } from "react";
 import Pricefilter from "./PriceSort";
+
 const Products = ({ products }) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isPriceFilterOpen, setPriceFilterOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(""); // State to store selected category
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
+  const [isPriceFilterVisible, setIsPriceFilterVisible] = useState(false);
+
+  const filterRef = useRef(null);
+  const priceFilterRef = useRef(null);
+
   const toggleFilter = () => setIsFilterOpen(!isFilterOpen);
-  const [isPriceFilteropen, setPriceFilter] = useState(false);
-  const togglepriceFilter = () => setPriceFilter(!isPriceFilteropen);
+  const togglePriceFilter = () => setPriceFilterOpen(!isPriceFilterOpen);
+
+  // Intersection observers for lazy loading
+  useEffect(() => {
+    const filterObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setIsFilterVisible(true);
+        filterObserver.disconnect();
+      }
+    });
+
+    const priceFilterObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setIsPriceFilterVisible(true);
+        priceFilterObserver.disconnect();
+      }
+    });
+
+    if (filterRef.current) filterObserver.observe(filterRef.current);
+    if (priceFilterRef.current)
+      priceFilterObserver.observe(priceFilterRef.current);
+
+    return () => {
+      filterObserver.disconnect();
+      priceFilterObserver.disconnect();
+    };
+  }, []);
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
   };
 
-  // Filter products based on selected category, or return all products if no category is selected
   const filteredProducts =
     selectedCategory.length > 0
       ? products.filter((product) =>
@@ -42,20 +74,27 @@ const Products = ({ products }) => {
         </div>
 
         <div className={styles.recom}>
-          <span onClick={togglepriceFilter}>RECOMMENDED</span>
-          {!isPriceFilteropen ? (
+          <span onClick={togglePriceFilter}>RECOMMENDED</span>
+          {!isPriceFilterOpen ? (
             <Image src="/arrow-down.svg" alt="error" width={20} height={20} />
           ) : (
             <Image src="/arrow-up.svg" alt="error" width={20} height={20} />
           )}
 
-          {isPriceFilteropen ? <Pricefilter Open={true} /> : ""}
+          <div ref={priceFilterRef}>
+            {isPriceFilterOpen && isPriceFilterVisible && (
+              <Pricefilter Open={true} />
+            )}
+          </div>
         </div>
       </div>
+
       <div className={styles.section}>
-        {isFilterOpen && (
-          <Filter onCategorySelect={handleCategorySelect} isOpen={true} />
-        )}
+        <div ref={filterRef}>
+          {isFilterOpen && isFilterVisible && (
+            <Filter onCategorySelect={handleCategorySelect} isOpen={true} />
+          )}
+        </div>
         <div className={styles.container}>
           {filteredProducts.map((product, index) => (
             <ProductItem key={index} product={product} />

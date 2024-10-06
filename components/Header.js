@@ -51,7 +51,7 @@ const Header = () => {
         <div className={styles.header_container}>
           <div className={styles.advertise}>
             <div className={styles.spaces}>
-              <Image src="/hamlinear.png" alt="error" width={36} height={40} />
+              {/* <Image src="/hamlinear.png" alt="error" width={36} height={40} /> */}
             </div>
           </div>
         </div>

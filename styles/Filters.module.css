@@ -5,7 +5,7 @@
 
 .dropbox-toggle {
   cursor: pointer;
-  font-family: Simplon Norm;
+  font-family: 'Simplon Norm';
   font-size: 18px;
   display: flex;
   justify-content: space-between;
@@ -15,6 +15,7 @@
   padding: 10px;
   border: 1px solid #ccc;
 }
+
 .dropbox-menu {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -25,13 +26,14 @@
 .dropbox-menu span {
   margin-left: 10px;
 }
+
 .dropbox-menu label {
   display: block;
   margin-bottom: 5px;
 }
 
 .all_text {
-  font-family: Simplon Norm;
+  font-family: 'Simplon Norm';
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -55,12 +57,11 @@
   display: block;
   width: 300px;
   position: absolute;
-  /* left: 140px; */
   top: 645px;
   right: 120px;
-  /* bottom: -1px; */
   background-color: white;
 }
+
 .custom label {
   display: flex;
   align-items: center;
@@ -82,6 +83,7 @@
   margin-top: 15px;
 }
 
+/* For mobile screens (max-width: 480px) */
 @media (max-width: 480px) {
   .show {
     display: block;
@@ -95,10 +97,8 @@
     display: block;
     width: 300px;
     position: absolute;
-    /* left: 140px; */
     top: 450px;
     right: 8px;
-    /* bottom: -1px; */
     background-color: white;
   }
 }

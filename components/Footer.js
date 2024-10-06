@@ -183,7 +183,7 @@ const Footer = () => {
             </div>
             <div className={styles.social_links_container}>
               <div className={styles.links}>
-                <Image src="/insta.svg" alt="infosvg" width={24} height={24} />
+                <Image src="/instagram.svg" alt="infosvg" width={24} height={24} />
                 <Image
                   src="/linkedin.svg"
                   alt="linkedinsvg"
@@ -195,7 +195,7 @@ const Footer = () => {
                 <div className={styles.toggleMenu}>
                   <Image
                     src="/instagram.svg"
-                    alt="infosvg"
+                    alt=""
                     width={24}
                     height={24}
                   />

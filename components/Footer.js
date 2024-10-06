@@ -194,7 +194,7 @@ const Footer = () => {
               {isfollowOpen && (
                 <div className={styles.toggleMenu}>
                   <Image
-                    src="/insta.svg"
+                    src="/instagram.svg"
                     alt="infosvg"
                     width={24}
                     height={24}
